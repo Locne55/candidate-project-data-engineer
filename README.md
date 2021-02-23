@@ -1,3 +1,38 @@
+## Set Up
+This environment requires `docker` and specifically we will be using `docker-compose`. If your machine does not have it, download it here https://www.docker.com/get-started .
+MacOS installation should be seamless. On Windows you will need WSL2. Sometimes WSL2 is not enabled in docker by default. The setting is located in docker under `Resources>WSL Integration`. Additionally, you may need to run docker-compose as sudo.
+
+## Run
+
+To build the 3 docker containers that will automatically initialize our postgresql database and python scripts:
+
+first
+```cd dockerbuild```
+then
+```docker-compose up```
+
+When the program has completed you should see `dockerbuild_python_1 exited with code 0` this means that `./scripts/projection_cleanup.py` successfully ran.
+
+scroll up in your terminal to find your jupyer notebook link.
+Its the last line in `datascience-notebook-1` and it should look similar to this:
+
+`datascience-notebook_1  |      or http://127.0.0.1:8888/?token=[your token]`
+
+copy the link into your web browser.
+
+There is a folder within root called work, this folder maps to `output` in this github repo.
+
+Open `out.ipynb`
+
+Press
+`Kernel>Restart and Run All>Restart and Run All Cells`
+
+The desired output should be in `output [8]`
+
+The PostgreSQL db is exposed on the local machine on port 5433. Default postgres user and the password is stored in docker-compose.yml file.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Introduction
 Welcome to Aspen Capital's Data Engineering challenge. This assignment will help us better assess your technical skills. We recommend that you focus on the requirements listed below and if time permitting - work on any additional features (of your own choosing).
 
