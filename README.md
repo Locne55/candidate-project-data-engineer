@@ -20,7 +20,7 @@ Its the last line in `datascience-notebook-1` and it should look similar to this
 
 copy the link into your web browser.
 
-There is a folder within root called work, this folder maps to `output` in this github repo.
+Inside jupyter notebook there is a folder within root called work, this folder maps to `output` in this github repo.
 
 Open `out.ipynb`
 
