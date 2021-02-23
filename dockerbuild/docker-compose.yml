@@ -17,8 +17,13 @@ services:
             retries: 5
       
     python:
-        build: .
+        build: . #tried to use alpine or slim python but kept throwing errors
         depends_on:
             db:
                 condition: service_healthy
-        
+    datascience-notebook:
+      image: jupyter/datascience-notebook  #tried to use minimal notebook but kept throwing errors
+      volumes:
+        - ./output/:/home/jovyan/work
+      ports:
+        - 8888:8888
